@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import * as L from 'leaflet';
 import { WildfireService } from './service/wildfire.service';
-import { Control as LeafletControl } from 'leaflet';;
+
 import { WindowComponent } from './window/window.component';
 import { MatDialog } from '@angular/material/dialog';
+import { ThemeService } from '../theme.service';
 
 @Component({
   selector: 'app-map',
@@ -12,23 +13,21 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class MapComponent implements OnInit {
   private map: any;
+  private departmentLayer: L.Layer | null = null;
 
   constructor(
     private fireService: WildfireService,
+    private themeService: ThemeService,
     private dialog: MatDialog
   ) {}
 
   ngOnInit(): void {
     this.map = L.map('map').setView([46.6031, 1.8904], 5);
+    this.updateDepartments(2000);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution:
         '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     }).addTo(this.map);
-
-    this.fireService.getFireData(2000).forEach((region: any) => {
-      console.log(region);
-      L.geoJSON(region).addTo(this.map);
-    });
 
     const bounds = L.latLngBounds(L.latLng(41, -5), L.latLng(51, 10));
 
@@ -38,18 +37,46 @@ export class MapComponent implements OnInit {
     );
     this.map.options.minZoom = this.map.getZoom();
 
-    this.resetZoomButton();
+    this.addZoomButton();
+    this.addInformationButton();
+    this.addSlider();
+
+    this.addEventListenersToSlider();
   }
 
-  private resetZoomButton() {
-    let zoomMaxControl = new LeafletControl({ position: 'topleft' });
+  private addEventListenersToSlider() {
+    let slider = <HTMLInputElement>document.getElementById('years');
 
-    zoomMaxControl.onAdd = (map: L.Map) => {
+    slider.addEventListener('change', (event) => {
+      let value = (<HTMLInputElement>event.target).value;
+      this.updateDepartments(Number.parseInt(value)); // Logs the current value of the slider
+    });
+  }
+
+  private updateDepartments(selectedYear: number) {
+    this.map.eachLayer((layer: any) => {
+      this.map.removeLayer(layer);
+    });
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution:
+        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    }).addTo(this.map);
+
+    this.fireService.getFireData(2023).forEach((region: any) => {
+      this.departmentLayer = L.geoJSON(region).addTo(this.map);
+    });
+  }
+
+  private addSlider() {
+    let sliderControl = new L.Control({ position: 'topright' });
+
+    sliderControl.onAdd = (map: L.Map) => {
       let div = L.DomUtil.create(
         'div',
         'leaflet-control leaflet-bar leaflet-control-zoom-max'
       );
-      div.innerHTML = '<a href="#" title="Zoom to Max" role="button">Zoom</a>';
+      div.innerHTML =
+        '<input type="range" min="2000" max="2023" value="2000" class="slider" id="years">';
 
       L.DomEvent.on(div, 'click', (e): void => {
         L.DomEvent.preventDefault(e);
@@ -58,9 +85,11 @@ export class MapComponent implements OnInit {
       return div;
     };
 
-    zoomMaxControl.addTo(this.map);
+    sliderControl.addTo(this.map);
+  }
 
-    let information: L.Control = new LeafletControl({ position: 'topleft' });
+  private addInformationButton() {
+    let information: L.Control = new L.Control({ position: 'topleft' });
 
     information.onAdd = (map: L.Map) => {
       let div: HTMLDivElement = L.DomUtil.create(
@@ -88,6 +117,26 @@ export class MapComponent implements OnInit {
     information.addTo(this.map);
   }
 
+  private addZoomButton() {
+    let zoomMaxControl = new L.Control({ position: 'topleft' });
+
+    zoomMaxControl.onAdd = (map: L.Map) => {
+      let div = L.DomUtil.create(
+        'div',
+        'leaflet-control leaflet-bar leaflet-control-zoom-max'
+      );
+      div.innerHTML = '<a href="#" title="" to Max" role="button">Zoom</a>';
+
+      L.DomEvent.on(div, 'click', (e): void => {
+        L.DomEvent.preventDefault(e);
+        this.zoomToMax();
+      });
+      return div;
+    };
+
+    zoomMaxControl.addTo(this.map);
+  }
+
   private zoomToMax(): void {
     const minZoom = this.map.getMinZoom();
     this.map.setZoom(minZoom);
@@ -96,8 +145,11 @@ export class MapComponent implements OnInit {
   public showInformation(): void {
     let dialogRef = this.dialog.open(WindowComponent, {
       width: '250px',
-      
     });
     dialogRef.afterClosed().subscribe(() => {});
+  }
+
+  public callTheme(theme: string) {
+    this.themeService.setTheme(theme);
   }
 }

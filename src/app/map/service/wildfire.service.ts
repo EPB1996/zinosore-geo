@@ -1,10 +1,13 @@
 import { Injectable } from '@angular/core';
 import data from '../data/departments_france.json';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class WildfireService {
+  private coursSubject: BehaviorSubject<any> = new BehaviorSubject<any>([]);
+  public courses$: Observable<any> = this.coursSubject.asObservable();
   departments = [
     '17',
     '33',
