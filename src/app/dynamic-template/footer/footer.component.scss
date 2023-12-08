@@ -1,0 +1,39 @@
+footer {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 12vh;
+  }
+
+  .title {
+    font-size: 20px;
+    color: white;
+    margin: 0;
+    padding-top: 4.5vh;
+    padding-left: 2vh;
+  }
+
+.beach{
+  background-color: #2c2ccd;
+  background-image:url("https://fondationtaraocean.org/app/themes/fondation-tara-ocean/resources/assets/images/tarapprendre-pattern.svg")
+}
+
+.mountain{
+  background-position: 10%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(https://cdn.pixabay.com/photo/2017/03/31/16/11/banner-2191712_1280.jpg);
+}
+
+.forest{
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("https://www.onf.fr/outils/long-reads/f73bad3f-7792-471a-ad05-eeba8d5d8d65/++versions++/27/++paras++/27/++illustration++/++i18n++data:fr/++thumb++banner:w1200?_=1550388063.134826");
+}
+
+.city{
+  background-position: 15%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(https://img.freepik.com/premium-vector/green-eco-city-banner_174191-51.jpg?w=1800);
+}

@@ -1,0 +1,57 @@
+.body {
+    display: flex;
+    flex-direction: column;
+}
+
+.beach {
+    background-color: #436EEE;
+}
+
+.forest {
+    background-color: #80BC2B;
+
+}
+
+.mountain {
+    background-color: #4682B4;
+
+}
+
+.city {
+    background-color: #DBE852;
+}
+
+
+.map {
+    margin-top: 5vh;
+    /* Ajoutez vos styles spécifiques pour la carte ici */
+    height: 70vh;
+    /* Ajustez selon vos besoins */
+    margin-left: 2vw;
+    margin-right: 2vw;
+}
+
+.T {
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    border-radius: 6px;
+    border: solid 1px black;
+    transition: transform 0.2s ease-in-out;
+    /* Ajout de l'effet de transition */
+    background-color: white;
+}
+
+.T:hover {
+    transform: scale(1.015);
+    /* Grossir la boîte au survol */
+}
+
+.text {
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

@@ -1,0 +1,12 @@
+<svg [attr.width]="width" [attr.height]="height" style="  margin-top: 30vh;
+margin-right: 20vw;">
+  <line *ngFor="let line of lines"
+  [attr.x1]="line.originx"
+  [attr.y1]="line.originy"
+  [attr.x2]="line.arrivex"
+  [attr.y2]="line.arrivey"
+  [attr.stroke]="line.stroke_color"
+  [attr.stroke-width]="line.stroke_width"
+/>
+</svg>
+
