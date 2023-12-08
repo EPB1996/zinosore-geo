@@ -1,5 +1,14 @@
 # ZinosoreGeo
 
+## Project description
+
+- Interactive map of the regions of France to visualize the number of deaths per year due to respiratory problems caused by air pollution [https://www.nuitdelinfo.com/inscription/defis/411]
+- Dynamic template: header, body, footer that changes based on 4 themes: mountain, beach, city, forest and inform our users about the ideas related to the environment, existing in society that are false, what is the truth and which are the existing solutions [https://www.nuitdelinfo.com/inscription/defis/392]
+- Dynamic representative SVGs for the 4 themes [https://www.nuitdelinfo.com/inscription/defis/391]
+- From a dynamic template to a key combination: Up Up Down Down Left Right Left Right B A, the user is redirected to the page https://reseauactionclimat.org/urgence-climatique/ [https://reseauactionclimat.org/urgence-climatique/]
+
+Our website sensitize our users to environmental problems.
+
 **Leaflet**: https://leafletjs.com/
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.1.
