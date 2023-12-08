@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { SvgFractalComponent } from './svg-fractal/svg-fractal.component';
 import { KonamiComponent } from './konami/konami.component';
 import { DynamicTemplateComponent } from './dynamic-template/dynamic-template.component';
+import {WindowComponent} from "./map/window/window.component";
 
 const routes: Routes = [
   { path: 'map', component: MapComponent },
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'konami', component: KonamiComponent },
   { path: 'svg-fractal', component: SvgFractalComponent },
   { path: 'dynamic-template', component: DynamicTemplateComponent },
+  { path: 'window', component: WindowComponent},
   { path: '', redirectTo: 'home', pathMatch: 'full' }, // Add default route
 ];
 

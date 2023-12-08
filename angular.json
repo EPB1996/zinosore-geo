@@ -102,6 +102,14 @@
     }
   },
   "cli": {
+<<<<<<< HEAD
     "analytics": "fcea606a-75ed-466e-b337-5283b8d523dc"
+=======
+<<<<<<< Updated upstream
+    "analytics": "d6518017-b1aa-41a4-b3db-1bac4ee399ea"
+=======
+    "analytics": "d87f539e-a1e5-498a-a18a-94a2c00bc2fb"
+>>>>>>> Stashed changes
+>>>>>>> map
   }
 }

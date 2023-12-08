@@ -9,13 +9,45 @@ import { HomeComponent } from './home/home.component';
 import { KonamiComponent } from './konami/konami.component';
 import { SvgFractalComponent } from './svg-fractal/svg-fractal.component';
 import { DynamicTemplateComponent } from './dynamic-template/dynamic-template.component';
+import { WindowComponent } from './map/window/window.component';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCommonModule } from '@angular/material/core';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 import { HeaderComponent } from './dynamic-template/header/header.component';
 import { FooterComponent } from './dynamic-template/footer/footer.component';
 import { BodyComponent } from './dynamic-template/body/body.component';
 
 @NgModule({
-  declarations: [AppComponent, MapComponent, HomeComponent, KonamiComponent, SvgFractalComponent, DynamicTemplateComponent, HeaderComponent, FooterComponent, BodyComponent],
-  imports: [BrowserModule, AppRoutingModule],
+  declarations: [
+    AppComponent,
+    MapComponent,
+    HomeComponent,
+    KonamiComponent,
+    SvgFractalComponent,
+    DynamicTemplateComponent,
+    WindowComponent,
+    KonamiComponent,
+    SvgFractalComponent,
+    DynamicTemplateComponent,
+    HeaderComponent,
+    FooterComponent,
+    BodyComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    CommonModule,
+    FormsModule,
+    MatButtonModule,
+    MatCommonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDialogModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
