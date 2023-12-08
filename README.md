@@ -7,7 +7,7 @@
 - Dynamic representative SVGs for the 4 themes [https://www.nuitdelinfo.com/inscription/defis/391]
 - From a dynamic template to a key combination: Up Up Down Down Left Right Left Right B A, the user is redirected to the page https://reseauactionclimat.org/urgence-climatique/ [https://reseauactionclimat.org/urgence-climatique/]
 
-Our website sensitize our users to environmental problems.
+Our website sensitize our users to climate changes.
 
 **Leaflet**: https://leafletjs.com/
 
