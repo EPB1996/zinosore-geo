@@ -1,0 +1,34 @@
+.body {
+    display: flex;
+    flex-direction: column;
+}
+
+.map {
+    margin-top: 5vh;
+    /* Ajoutez vos styles spécifiques pour la carte ici */
+    height: 60vh; /* Ajustez selon vos besoins */
+    padding-left: 2vw;
+    padding-right: 2vw;
+}
+
+.grid {
+    display: flex;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    padding-left: 2vw;
+    padding-right: 2vw;
+}
+
+.grid-item {
+    width: 50vw;
+}
+
+.text {
+    /* Ajoutez des styles spécifiques pour les éléments de texte ici */
+}
+
+.pasDinspi {
+    min-width: 47vw;
+    background-color: #ddd; /* couleur de fond par défaut */
+
+}
