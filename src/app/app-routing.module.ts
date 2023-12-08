@@ -8,13 +8,9 @@ import { DynamicTemplateComponent } from './dynamic-template/dynamic-template.co
 import {WindowComponent} from "./map/window/window.component";
 
 const routes: Routes = [
-  { path: 'map', component: MapComponent },
-  { path: 'home', component: HomeComponent },
-  { path: 'konami', component: KonamiComponent },
-  { path: 'svg-fractal', component: SvgFractalComponent },
+
   { path: 'dynamic-template', component: DynamicTemplateComponent },
-  { path: 'window', component: WindowComponent},
-  { path: '', redirectTo: 'home', pathMatch: 'full' }, // Add default route
+  { path: '', redirectTo: 'dynamic-template', pathMatch: 'full' }, // Add default route
 ];
 
 @NgModule({
