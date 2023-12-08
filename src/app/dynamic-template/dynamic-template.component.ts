@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./dynamic-template.component.scss']
 })
 export class DynamicTemplateComponent {
-
+  public theme : string = 'beach' ;
 }

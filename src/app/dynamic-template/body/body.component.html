@@ -1,14 +1,130 @@
-<div class="body">
+<div class="body" [ngClass]="theme">
     <app-map class="map"></app-map>
 
-    <div class="grid">
-        <div class="pasDinspi"> 
-            <div class="grid-item">Image</div>
-            <div class="grid-item text">texte</div>
-        </div>
-        <div class="pasDinspi"> 
-            <div class="grid-item text">texte</div>
-            <div class="grid-item">Image</div>
+    <div>
+        <div>Image</div>
+        <div class="T">
+            <div *ngIf="theme=='mountain'" class="text">
+                <h1>Fausse Idée Reçue : "Le changement climatique n'est pas réel"</h1>
+
+                <h2>La Vérité rétablie :</h2>
+
+                <p>
+                    Les montagnes se réchauffent deux fois plus vite que les autres écosystèmes : dans les Alpes et les
+                    Pyrénées françaises, la température a augmenté de plus de deux degrés au cours du XXe siècle, contre
+                    1,4
+                    degré dans le reste de la France, constate Météo France.
+                    Le Mont-Blanc a perdu plus de deux mètres depuis 2021, a relevé l'ordre des géomètres-experts de
+                    Haute-Savoie. Les conséquences du changement climatique prennent de l'ampleur.
+                </p>
+
+                <p>
+                    Le changement climatique a des conséquences majeures sur l’enneigement en montagne. En baisse depuis
+                    les
+                    années 1970, il est aujourd'hui "moins important et plus variable". Sa durée "se réduira d'environ
+                    un
+                    mois par degré de réchauffement", selon les études de ClimSnow.
+                    Les estimations prévoient un enneigement "réduit à une présence éphémère" en moyenne montagne et
+                    "amoindri" à plus haute altitude. "En haute montagne, l’épaisseur moyenne de neige en hiver à basse
+                    altitude diminuera probablement de 10 à 40% en 2031‑2050 par rapport à 1986‑2005, quel que soit le
+                    scénario d’émissions", précise le GIEC.
+                </p>
+
+                <h2>Voici comment nous pouvons, simplement, faire face à l'urgence climatique :</h2>
+
+                <ul>
+                    <li>Décarboner la mobilité des visiteurs de la montagne, en se déplaçant via la mobilité douce (ex :
+                        train, covoiturage, à pieds pour les courageux)</li>
+                    <li>Modérer l'utilisation du bois et l'utiliser seulement par nécessité</li>
+                </ul>
+            </div>
+            <div *ngIf="theme=='beach'" class="text">
+                <h1>Fausse Idée Reçue : "Le niveau des mers n'augmente pas"</h1>
+
+                <h2>La Vérité rétablie :</h2>
+
+                <p>
+                    Avec ses 5 800 km de côte (en métropole), la France est l’un des pays européens les
+                    plus menacés par les inondations côtières, dont le risque est renforcé par la montée des eaux et
+                    l’érosion causées par le changement climatique. Le nombre de personnes vivant dans des zones à
+                    risque est de 900 000 personnes actuellement, et pourrait passer à 1.7 million d’ici la fin du
+                    siècle si les émissions sont élevées. Le risque d’augmentation est par ailleurs exacerbé par la
+                    modification des précipitations, plus intenses dans certaines régions, et qui seront moins absorbées
+                    par des sols dégradés par la sécheresse.
+                </p>
+
+                <h2>Voici comment nous pouvons, simplement, faire face à l'urgence climatique :</h2>
+
+                <ul>
+                    <li>Mettre en œuvre des infrastructures durable de protection côtière</li>
+                    <li>Promouvoir des pratiques de gestion durable des terres pour prévenir l'érosion</li>
+                </ul>
+            </div>
+            <div *ngIf="theme=='city'" class="text">
+                <h1>Fausse Idée Reçue : "Le changement climatique pourrait être bénéfique pour nous"</h1>
+
+                <h2>La Vérité rétablie :</h2>
+
+                <p>
+                    Avec le changement climatique, les vagues de chaleur et les canicules seront de plus en plus
+                    fréquentes, intenses, durables et précoces (intervenant en 2022 dès la mi-juin : un record). Or, la
+                    ville est devenue un milieu particulièrement vulnérable à la chaleur. Avec le réchauffement
+                    climatique, il y fera donc encore plus chaud. En cause : l’effet d’« îlot de chaleur urbain » (ICU).
+                </p>
+
+                <p>
+                    Les mécanismes sont désormais connus : très minérales et denses, les constructions stockent la
+                    chaleur le jour et la restituent la nuit, tandis que leur configuration empêche l’air de circuler.
+                    La forte activité humaine génère aussi des flux de chaleur. La faible présence du végétal et de
+                    l’eau peinent à rafraîchir l’air ambiant.
+                </p>
+
+                <p>
+                    Résultat, la température est plus élevée en ville qu’à sa périphérie. Le phénomène s’accentue la
+                    nuit, alors que dans un environnement proche, la température baisse de quelques degrés
+                    supplémentaires, une fois le soleil couché.
+                </p>
+
+                <h2>Voici comment nous pouvons, simplement, faire face à l'urgence climatique :</h2>
+
+                <ul>
+                    <li>Les toitures végétales</li>
+                    <li>Les murs végétalisés</li>
+                    <li>Les arbres isolés ou en bordure de route peuvent diminuer la température de 2 à 3 °C</li>
+                </ul>
+            </div>
+            <div *ngIf="theme=='forest'" class="text">
+                <h1>Fausse Idée Reçue : "Les forêts sont immuables face au changement climatique"</h1>
+
+                <h2>La Vérité rétablie :</h2>
+
+                <p>
+                    Contrairement à la croyance populaire, les forêts ne sont pas immuables face au changement
+                    climatique. Elles
+                    subissent de profondes transformations en raison des variations de température, des modèles de
+                    précipitations
+                    changeants et d'autres facteurs liés au climat. Les écosystèmes forestiers, bien que résilients,
+                    sont sensibles
+                    aux perturbations climatiques, ce qui a des implications importantes sur la biodiversité et les
+                    services
+                    écosystémiques fournis par les forêts.
+                </p>
+
+                <h2>Voici comment nous pouvons, simplement, faire face à l'urgence climatique :</h2>
+
+                <ul>
+                    <li>Encourager une gestion forestière durable favorisant la régénération naturelle et la
+                        biodiversité.</li>
+                    <li>Mettre en œuvre des politiques de conservation des forêts, en particulier dans les zones riches
+                        en
+                        biodiversité et les puits de carbone.</li>
+                    <li>Impliquer activement les communautés locales dans la protection des forêts en les sensibilisant
+                        aux
+                        conséquences de la déforestation sur leur propre environnement et en les incitant à participer à
+                        des
+                        programmes de conservation.</li>
+                </ul>
+            </div>
         </div>
     </div>
 </div>
