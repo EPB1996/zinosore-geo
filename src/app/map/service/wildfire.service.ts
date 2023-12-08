@@ -48,16 +48,9 @@ export class WildfireService {
     let filteredData = data[0].features;
 
     for (let year = 2023; year >= selectedYear; year--) {
-     /*  for (let i = 0; i < 3; i++) {
-        if (departmentsCopy.length > 0) {
-          const randomIndex = Math.floor(
-            Math.random() * departmentsCopy.length
-          );
-          departmentsCopy.splice(randomIndex, 1);
-        } else {
-          break;
-        }
-      } */
+      const randomIndex = Math.floor(Math.random() * departmentsCopy.length);
+      departmentsCopy.splice(randomIndex, 1);
+
       filteredData = data[0].features.filter((d: any) =>
         departmentsCopy.includes(d.properties.code)
       );

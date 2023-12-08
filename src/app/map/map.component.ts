@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import * as L from 'leaflet';
 import { WildfireService } from './service/wildfire.service';
 import { Control as LeafletControl } from 'leaflet';
+import { ThisReceiver } from '@angular/compiler';
 
 @Component({
   selector: 'app-map',
@@ -21,9 +22,9 @@ export class MapComponent implements OnInit {
         '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     }).addTo(this.map);
 
-    this.fireService.getFireData(2022).forEach((region: any) => {
+    this.fireService.getFireData(2000).forEach((region: any) => {
       console.log(region);
-      L.polygon(region.geometry.coordinates, { color: 'red' }).addTo(this.map);
+      L.geoJSON(region).addTo(this.map);
     });
 
     const bounds = L.latLngBounds(L.latLng(41, -5), L.latLng(51, 10));
@@ -34,8 +35,11 @@ export class MapComponent implements OnInit {
     );
     this.map.options.minZoom = this.map.getZoom();
 
-    this.map.getContainer().classList.add('grayscale');
+    this.resetZoomButton();
 
+  }
+
+  private resetZoomButton() {
     let zoomMaxControl = new LeafletControl({ position: 'topleft' });
 
     zoomMaxControl.onAdd = (map: L.Map) => {
